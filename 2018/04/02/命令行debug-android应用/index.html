@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Peng">
 <meta property="og:description" content="设置端口使用adb forward命令： 1$ adb forward tcp:&amp;lt;本地端口&amp;gt; jdwp:&amp;lt;进程pid&amp;gt; 例如： 1$ adb forward tcp:8688 jdwp:785 开始调试1$ jdb -sourcepath &amp;lt;应用源码src地址&amp;gt; -connect com.sun.jdi.SocketAttach:hostname=localho">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-04-02T16:11:59.894Z">
+<meta property="og:updated_time" content="2018-04-04T12:18:59.967Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="命令行debug android应用">
 <meta name="twitter:description" content="设置端口使用adb forward命令： 1$ adb forward tcp:&amp;lt;本地端口&amp;gt; jdwp:&amp;lt;进程pid&amp;gt; 例如： 1$ adb forward tcp:8688 jdwp:785 开始调试1$ jdb -sourcepath &amp;lt;应用源码src地址&amp;gt; -connect com.sun.jdi.SocketAttach:hostname=localho">
@@ -346,7 +346,7 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ adb forward tcp:&lt;本地端口&gt; jdwp:&lt;进程pid&gt;</span><br></pre></td></tr></table></figure>
 <p>例如：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ adb forward tcp:8688 jdwp:785</span><br></pre></td></tr></table></figure>
-<h3 id="开始调试"><a href="#开始调试" class="headerlink" title="开始调试"></a>开始调试</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ jdb -sourcepath &lt;应用源码src地址&gt; -connect com.sun.jdi.SocketAttach:hostname=localhost,port=8618</span><br></pre></td></tr></table></figure>
+<h3 id="开始调试"><a href="#开始调试" class="headerlink" title="开始调试"></a>开始调试</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ jdb -sourcepath &lt;应用源码src地址&gt; -connect com.sun.jdi.SocketAttach:hostname=localhost,port=8688</span><br></pre></td></tr></table></figure>
 <h3 id="jdb基本使用"><a href="#jdb基本使用" class="headerlink" title="jdb基本使用"></a>jdb基本使用</h3><p>jdb具体使用命令，可以通过help查看</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; <span class="built_in">help</span></span><br></pre></td></tr></table></figure>
 <h4 id="设置断点"><a href="#设置断点" class="headerlink" title="设置断点"></a>设置断点</h4><p>在方法处设置断点</p>
@@ -355,6 +355,7 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; stop at com.xinxin.MainActivity:66</span><br></pre></td></tr></table></figure>
 <h4 id="输出变量值"><a href="#输出变量值" class="headerlink" title="输出变量值"></a>输出变量值</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; <span class="built_in">print</span> variable</span><br></pre></td></tr></table></figure>
 <h4 id="下一步"><a href="#下一步" class="headerlink" title="下一步"></a>下一步</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; step</span><br></pre></td></tr></table></figure>
+<h4 id="下一行"><a href="#下一行" class="headerlink" title="下一行"></a>下一行</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; next</span><br></pre></td></tr></table></figure>
 <h4 id="从断点处继续执行"><a href="#从断点处继续执行" class="headerlink" title="从断点处继续执行"></a>从断点处继续执行</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; cont</span><br></pre></td></tr></table></figure>
       
     </div>
@@ -527,7 +528,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#设置端口"><span class="nav-number">1.</span> <span class="nav-text">设置端口</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#开始调试"><span class="nav-number">2.</span> <span class="nav-text">开始调试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#jdb基本使用"><span class="nav-number">3.</span> <span class="nav-text">jdb基本使用</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#设置断点"><span class="nav-number">3.1.</span> <span class="nav-text">设置断点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#输出变量值"><span class="nav-number">3.2.</span> <span class="nav-text">输出变量值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#下一步"><span class="nav-number">3.3.</span> <span class="nav-text">下一步</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#从断点处继续执行"><span class="nav-number">3.4.</span> <span class="nav-text">从断点处继续执行</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#设置端口"><span class="nav-number">1.</span> <span class="nav-text">设置端口</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#开始调试"><span class="nav-number">2.</span> <span class="nav-text">开始调试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#jdb基本使用"><span class="nav-number">3.</span> <span class="nav-text">jdb基本使用</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#设置断点"><span class="nav-number">3.1.</span> <span class="nav-text">设置断点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#输出变量值"><span class="nav-number">3.2.</span> <span class="nav-text">输出变量值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#下一步"><span class="nav-number">3.3.</span> <span class="nav-text">下一步</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#下一行"><span class="nav-number">3.4.</span> <span class="nav-text">下一行</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#从断点处继续执行"><span class="nav-number">3.5.</span> <span class="nav-text">从断点处继续执行</span></a></li></ol></li></ol></div>
             
 
           </div>
